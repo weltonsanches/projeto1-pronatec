@@ -1,0 +1,67 @@
+header{
+    background-color: #3199DC;
+    height: 100px;
+    width: 100%;
+    position: fixed; /* O position tem que ser fixed para que o header continue lá, mesmo quando rolarmos a página */
+}
+.div-botao-menu{
+    line-height:100px !important;/* As vezes precisa do important por causa de conflitos com o bootstrap :( */
+}
+.div-logo-folha{
+    height:100px;
+}
+.div-logo-folha>img{
+    position: absolute; /* Position absolute pra forçarmos a imagem ficar no final da div */
+    top: 20px;
+    height: 80px;
+}
+.txt-header{
+    height:100px;
+}
+.txt-header>h5{
+    color: #fff;
+    line-height:100px; /* O line-height aqui serve pra centralizar algo na vertical */
+}
+.btn-header{
+    height:100px;
+    line-height:100px;
+}
+.btn-facebook{
+    color: #335190;
+}
+.btn-twitter{
+    color: #00AFF3;
+}
+/* O @media faz com que a regra seja aplicada somente quando a resolução obedecer a regra entre parenteses.
+* No caso abaixo só serão aplicadas as regras, se o dispositivo que acessa nossa página tiver no máximo 768px.
+* Neste projeto precisamos usar @media pra especificar as regras aplicadas quando o acesso vier de um celular, tablet ou desktop.
+*/
+@media (max-width: 768px ) {
+    .txt-header{
+        display: none;
+    }
+    .btn-header{
+        display: none;
+    }
+}
+@media (min-width: 768px) and (max-width: 1200px){
+    .btn-header>button>span{
+        display: none;
+    }
+    .btn-header>button{
+        width: 30px;
+    }
+    .btn-header>button>img{
+        width: 15px;
+        height: 15px;
+    }
+}
+@media (min-width:1200px){
+    .btn-header>button{
+        margin-left: 20px;
+    }
+    .btn-header>button>img{
+        width: 20px;
+        height: 20px;
+    }
+}
