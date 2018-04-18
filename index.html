@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>O site de teste para novos webs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> <!-- Importando o CSS do Bootstrap -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" /> <!-- Importando o meu CSS -->
 </head>
 <body>
     <header>
-<!-- As divs com as classes 'container','row' e 'col-algumacoisa' são referentes ao sistema de grid do Bootstrap -->
-        <div class="container"> 
-            <div class="row">
-                <div class="col-lg-3 col-sm-2 col-xs-3 div-botao-menu">
-                    <!-- A maioria das imagens serão inseridas 3x pq existe uma versão para cada dispositivo que acessar nosso site -->
-                    <!-- As classes 'hidden-xs hidden-sm hidden-md hidden-lg' vem do bootstrap e servem pra esconder alguma coisa em determinado dispositivo/resolução -->
-                    <img src="img/desktop/menu-icon.png" alt="Ícone do menu" class="hidden-xs hidden-sm hidden-md"> 
+        <div class="container"> <!-- Criando um conteiner para minhas informações (Classe do bootstrap) -->
+            <div class="row"> <!-- Criando uma linha da minha grid -->
+                <div class="col-lg-3 col-sm-2 col-xs-3 div-botao-menu"> <!-- Aqui eu defino que este conteúdo irá ocupar 3 colunas da minha grid em grandes resoluções, 2 em resoluções médias e 3 em resoluções pequenas -->
+                    <!-- Aqui e em várias partes do código eu importo 3 vezes a imagem, uma pra cada tamanho de tela -->
+                    <!-- Essa só aparece em telas grandes -->
+                    <img src="img/desktop/menu-icon.png" alt="Ícone do menu" class="hidden-xs hidden-sm hidden-md">
+                    <!-- Essa só aparece em telas médias -->
                     <img src="img/tablet/menu-icon.png" alt="Ícone do menu"  class="hidden-xs hidden-lg">
+                    <!-- Essa só aparece em telas menores, o que define qual tela aparece são as classes, estas classes estão sendo herdadas do bootstrap -->
                     <img src="img/mobile/menu-icon.png" alt="Ícone do menu"  class="hidden-sm hidden-md hidden-lg">
                 </div>
                 <div class="col-md-3 col-xs-4 div-logo-folha">
@@ -34,7 +35,29 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> <!-- Fim daquele header azul -->
+    <div class="container">
+        <!-- Na linha abaixo eu acrescento a imagem com as setas do lado -->
+        <div class="row">
+            <div class="col-xs-12 text-center image-rotate">
+                <img src="img/desktop/image_rotate.png" alt="Imagem do carousel" class="hidden-xs hidden-sm hidden-md">
+                <img src="img/tablet/image_rotate.png" alt="Imagem do carousel" class="hidden-xs hidden-lg">
+                <img src="img/mobile/image_rotate.png" alt="Imagem do carousel" class="hidden-sm hidden-md hidden-lg">
+                <!-- Este é o texto que fica em cima da imagem -->
+                <div class="texto-image-rotate">
+                    <h3>Mussum Ipsum cacilds</h3>
+                    <p class="hidden-xs">Si num tem leite então bota uma pinga aí cumpadi! Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.</p>
+                </div>
+                <!-- ball-direita e ball-esquerda é a bolinha que fica em volta das setas nos lados da imagem -->
+                <div class="ball-direita text-center">
+                    <img src="img/desktop/arrow_right-icon.png" alt="Anterior">
+                </div>
+                <div class="ball-esquerda text-center">
+                    <img src="img/desktop/arrow_left-icon.png" alt="Próximo">
+                </div>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>

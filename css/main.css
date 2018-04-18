@@ -1,17 +1,18 @@
+/* Aqui eu defino o fundo, tamanho e position do header */
 header{
     background-color: #3199DC;
     height: 100px;
     width: 100%;
-    position: fixed; /* O position tem que ser fixed para que o header continue lá, mesmo quando rolarmos a página */
+    position: fixed; /* Isso serve para que quando rolar a tela pra baixo o header fique fixo */
 }
 .div-botao-menu{
-    line-height:100px !important;/* As vezes precisa do important por causa de conflitos com o bootstrap :( */
+    line-height:100px !important;/* Isso é pra alinhamento vertical do botão */
 }
 .div-logo-folha{
     height:100px;
 }
 .div-logo-folha>img{
-    position: absolute; /* Position absolute pra forçarmos a imagem ficar no final da div */
+    position: absolute;/* Teve que ficar absolute pra forçar o final da imagem junto com o final do header */
     top: 20px;
     height: 80px;
 }
@@ -20,7 +21,7 @@ header{
 }
 .txt-header>h5{
     color: #fff;
-    line-height:100px; /* O line-height aqui serve pra centralizar algo na vertical */
+    line-height:100px;
 }
 .btn-header{
     height:100px;
@@ -32,10 +33,30 @@ header{
 .btn-twitter{
     color: #00AFF3;
 }
-/* O @media faz com que a regra seja aplicada somente quando a resolução obedecer a regra entre parenteses.
-* No caso abaixo só serão aplicadas as regras, se o dispositivo que acessa nossa página tiver no máximo 768px.
-* Neste projeto precisamos usar @media pra especificar as regras aplicadas quando o acesso vier de um celular, tablet ou desktop.
-*/
+/* Até aqui foi referente ao header, daqui pra baixo é referente a imagem com as setas do lado */
+.image-rotate{
+    margin-top: 150px;/* Foi preciso add isso para que a imagem não fique embaixo do header, já que a imagem tem position relative e o header position fixed */
+}
+.texto-image-rotate{
+    margin-top: -150px;
+    text-align: left;
+    color: #fff;
+    margin-left: 20px;
+}
+.texto-image-rotate>h3{
+    background-color:#3199DC;
+    position: absolute;/* Foi necessário deixar absolute para garantir que não fique embaixo da imagem */
+    text-transform: uppercase;
+    max-width: 100%;
+}
+.texto-image-rotate>p{
+    position: absolute;
+    top: 370px;
+    font-size: 22px;
+    max-width: 100% !important;
+}
+/* Até aqui o CSS é aplicado em qualquer situação */
+/* Daqui pra baixo, o CSS só aplicado a resolução menores que 768px, isso por causa da linha abaixo */
 @media (max-width: 768px ) {
     .txt-header{
         display: none;
@@ -43,7 +64,14 @@ header{
     .btn-header{
         display: none;
     }
+    .texto-image-rotate>h3{
+        top: 200px;
+    }
+    .ball-direita, .ball-esquerda{
+        display: none;
+    }
 }
+/* O código abaixo só será aplicado quando o acesso vier de resoluções maiores que 768px e menores que 1200px */
 @media (min-width: 768px) and (max-width: 1200px){
     .btn-header>button>span{
         display: none;
@@ -55,7 +83,15 @@ header{
         width: 15px;
         height: 15px;
     }
+    .texto-image-rotate>p{
+        font-size: 20px;
+        width: 432px;
+    }
+    .ball-direita, .ball-esquerda{
+        display: none;
+    }
 }
+/* O código abaixo só será aplicado quando o acesso vier de resoluções maiores que 1200px */
 @media (min-width:1200px){
     .btn-header>button{
         margin-left: 20px;
@@ -63,5 +99,27 @@ header{
     .btn-header>button>img{
         width: 20px;
         height: 20px;
+    }
+    .texto-image-rotate{
+        width: 1139px;
+    }
+    .ball-direita, .ball-esquerda{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        line-height:50px;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+    .ball-direita:hover,.ball-esquerda:hover{
+        background-color: #ddd;
+    }
+    .ball-esquerda{
+        top:200px;
+        left: -9px;
+    }
+    .ball-direita{
+        top:200px;
+        left:1130px;
     }
 }
